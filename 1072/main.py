@@ -8,6 +8,9 @@ Description:
 
 Copyright (c) 2023 by GuangjiTech, All Rights Reserved. 
 '''
+from types import List
+
+
 class Solution:
     def maxEqualRowsAfterFlips(self, matrix: List[List[int]]) -> int:
         pass
