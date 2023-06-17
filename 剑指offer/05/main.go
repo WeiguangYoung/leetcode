@@ -1,3 +1,7 @@
+package main
+
+import "strings"
+
 func replaceSpace(s string) string {
 	var s2 []string
 	for _, i := range s {
@@ -9,4 +13,8 @@ func replaceSpace(s string) string {
 	}
 
 	return strings.Join(s2, "")
+}
+
+func main() {
+
 }
