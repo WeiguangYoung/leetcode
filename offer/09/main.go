@@ -25,7 +25,7 @@ func (this *CQueue) DeleteHead() int {
 
 		for len(this.inStack) > 0 {
 			this.outStack = append(this.outStack, this.inStack[len(this.inStack)-1])
-			this.inStack = this.inStack[:len(this.inStack)-1]
+			this.inStack=this.inStack[:len(this.inStack)-1]
 		}
 	}
 	value := this.outStack[len(this.outStack)-1]
