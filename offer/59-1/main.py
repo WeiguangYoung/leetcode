@@ -26,5 +26,5 @@ class Solution:
 
 # 1 -1
 s = Solution()
-r = s.maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3)
+r = s.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3)
 print(r)
