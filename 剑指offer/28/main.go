@@ -30,3 +30,7 @@ func isSymmetric(root *TreeNode) bool {
 	}
 	return true
 }
+
+func main() {
+	isSymmetric(nil)
+}
