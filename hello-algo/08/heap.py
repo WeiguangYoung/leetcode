@@ -1,7 +1,11 @@
 class MaxHeap:
-    def __init__(self) -> None:
-        self.max_heap = []
-        self.flag = -1
+    def __init__(self, nums: list):
+        """构造方法，根据输入列表建堆"""
+        # 将列表元素原封不动添加进堆
+        self.max_heap = nums
+        # 堆化除叶节点以外的其他所有节点
+        for i in range(self.parent(self.size() - 1), -1, -1):
+            self.sift_down(i)
 
     def left(self, i: int) -> int:
         """获取左子节点的索引"""
@@ -65,7 +69,7 @@ class MaxHeap:
 
             if l < self.size() and self.max_heap[l] > self.max_heap[i]:
                 m = l
-            elif l < self.size() and self.max_heap[r] > self.max_heap[i]:
+            if l < self.size() and self.max_heap[r] > self.max_heap[i]:
                 m = r
 
             if m == i:
