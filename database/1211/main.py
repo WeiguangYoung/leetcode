@@ -10,4 +10,5 @@ def queries_stats(queries: pd.DataFrame) -> pd.DataFrame:
         "quality": lambda x: round(x.mean(), 2),
         "poor_query_percentage": lambda x: round(x.sum()*100/x.count(), 2),
     }).reset_index()
+    grouped_queries = grouped_queries[grouped_queries["query_name"].notnull()]
     return grouped_queries
