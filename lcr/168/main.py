@@ -16,7 +16,7 @@ class Solution:
         return res[-1]
 
 
-class Solution:
+class Solution2:
     def nthUglyNumber(self, n: int) -> int:
         factors = [2, 3, 5]
         seen = {1}
@@ -32,6 +32,6 @@ class Solution:
         return heapq.heappop(heap)
 
 
-s = Solution()
+s = Solution2()
 r = s.nthUglyNumber(10)
 print(r)
