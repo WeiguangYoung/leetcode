@@ -38,10 +38,37 @@ class Solution:
         return False
 
 
+class Solution2:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        if not board or not board[0] or not word:
+            return False
+        m, n = len(board), len(board[0])
+
+        def dfs(r, c, idx):
+            if (not 0 <= r < m) or (not 0 <= c < n) or (board[r][c] != word[idx]):
+                return False
+
+            if idx >= len(word) - 1:
+                return True
+
+            board[r][c] = ""
+            res = dfs(r - 1, c, idx + 1) or dfs(r + 1, c, idx + 1) or dfs(r, c - 1, idx + 1) or dfs(r, c + 1, idx + 1)
+            board[r][c] = word[idx]
+
+            return res
+
+        for i, row in enumerate(board):
+            for j, value in enumerate(row):
+                if dfs(i, j, 0):
+                    return True
+
+        return False
+
+
 if __name__ == '__main__':
     board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
     word = "ABCCED"
 
-    s = Solution()
-    result = s.exist([["a"]], "a")
+    s = Solution2()
+    result = s.exist(board, word)
     print(result)
